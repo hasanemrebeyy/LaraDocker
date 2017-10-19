@@ -1,0 +1,22 @@
+version: '2'
+services:
+    mysql:
+        build: ./db
+        container_name: db
+        env_file:
+            - ./.env
+        volumes:
+            - ./storage/mysql:/var/lib/mysql
+            - ./db/conf.d:/etc/mysql/conf.d
+            - ./storage/logs/mysql:/var/log/mysql
+    web:
+        build: ./site
+        container_name: site
+        ports:
+            - 5757:80
+        env_file:
+            - ./.env
+        volumes:
+            - ./site/laravel:/var/www
+            - ./storage/app:/var/www/storage/app
+            - ./storage/logs:/var/www/storage/logs
