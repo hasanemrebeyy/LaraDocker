@@ -22,10 +22,11 @@ The requirements must be established
     composer update
 Before, once again, change directory
 
-    cd ~/laravel-docker
-    
+    cd ~/laravel-docker      
 The docker must be run and built
+   
     docker-compose up -d 
+    
 This command, build containers and run them.
 
 Later, you must enter the browser and visit http://localhost:5757 (5757 is mean my dream city Sinop :hearts: )
